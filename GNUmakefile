@@ -1,58 +1,29 @@
-all:: bem-bl
-all:: $(patsubst %.bemjson.js,%.html,$(wildcard pages/*/*.bemjson.js))
+.DEFAULT_GOAL :=
 
-BEM_BUILD=bem build \
-	-l bem-bl/blocks-common/ \
-	-l bem-bl/blocks-desktop/ \
-	-l blocks/ \
-	-l $(*D)/blocks/ \
-	-d $< \
-	-t $1 \
-	-o $(@D) \
-	-n $(*F)
+NODE_MODULES := ./node_modules/
 
-BEM_CREATE=bem create block \
-		-l pages \
-		-t $1 \
-		$(*F)
+BEM := $(NODE_MODULES).bin/bem
+NPM := npm
 
-%.html: %.bemhtml.js %.css %.js
-	rm -f $@
-	$(call BEM_CREATE,bem-bl/blocks-common/i-bem/bem/techs/html.js)
+ifneq (,$(findstring B,$(MAKEFLAGS)))
+		BEM_FLAGS := --force
+	endif
 
-%.bemhtml.js: %.deps.js
-	$(call BEM_BUILD,bem-bl/blocks-common/i-bem/bem/techs/bemhtml.js)
+all:: $(BEM) server
 
-%.deps.js: %.bemdecl.js
-	$(call BEM_BUILD,deps.js)
+%:: $(BEM)
+		$(if $(findstring GNUmakefile,$@),,$(BEM) make $@ $(BEM_FLAGS))
 
-%.bemdecl.js: %.bemjson.js
-	$(call BEM_CREATE,bemdecl.js)
+.PHONY: server
+	server:: $(BEM)
+		@$(BEM) server
 
-.PRECIOUS: %.css
-%.css: %.deps.js
-	$(call BEM_BUILD,bem/techs/css.js)
-	csso $@ | gzip -cf9 >$@.gz
+$(BEM):: $(NODE_MODULES)
 
-.PRECIOUS: %.ie.css
-%.ie.css: %.deps.js
-	$(call BEM_BUILD,bem/techs/ie.css.js)
-	csso $@ | gzip -cf9 >$@.gz
+$(NODE_MODULES)::
+		$(debug ---> Updating npm dependencies)
+		@$(NPM) install
 
-.PRECIOUS: %.js
-%.js: %.deps.js
-	$(call BEM_BUILD,js)
-	uglifyjs $@ | gzip -cf9 >$@.gz
-
-DO_GIT=@echo -- git $1 $2; \
-	if [ -d $2 ]; \
-		then \
-			cd $2 && git pull origin master; \
-		else \
-			git clone $1.git $2; \
-	fi
-
-bem-bl:
-	$(call DO_GIT,git://github.com/bem/bem-bl.git,$@)
-
-.PHONY: all
+.PHONY: clean
+clean::
+	$(BEM) make -m clean
