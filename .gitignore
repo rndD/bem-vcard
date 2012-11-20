@@ -4,4 +4,5 @@ node_modules
 pages/*/*.css*
 pages/*/*.js*
 !*.bemjson.js
+!*level.js
 pages/*/*.html
