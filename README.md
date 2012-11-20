@@ -3,9 +3,9 @@ Simple BEM project which can be build with BEM MAKE tool
 
 ### Usage
 
-... › git clone git@github.com:rndD/bem-vcard.git
-... › cd bem-vcard
-... › make
+    › git clone git@github.com:rndD/bem-vcard.git
+    › cd bem-vcard
+    › make
 
 This will install localy all project's dependencies from npm and starts local
 `bem server`
@@ -16,9 +16,9 @@ Alternative to use `make`, you could install all dependencies by your self. To
 do so type `npm install` from the top
 of your working copy. After that your could start server:
 
-   › bem server
+    › bem server
 
-... Navigate to `http://localhost:8080/pages/mishanga/mishanga.html`
+Navigate to `http://localhost:8080/pages/mishanga/mishanga.html`
 
 **NOTE:** `bem` should be in your `PATH` environment variable. You could do
 this by adding this line to your user's
