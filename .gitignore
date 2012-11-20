@@ -1,4 +1,6 @@
 bem-bl
+.bem/cache
+node_modules
 pages/*/*.css*
 pages/*/*.js*
 !*.bemjson.js

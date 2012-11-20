@@ -7,7 +7,7 @@
       "url": "git://github.com/rndD/bem-vcard.git"
      },
      "engines": {
-      "node": "0.6 | 0.7 | 0.8 | 0.9"
+      "node": "0.8 | 0.9"
      },
      "dependencies": {
       "bem": "~0.5.19"
