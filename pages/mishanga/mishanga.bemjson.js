@@ -6,7 +6,7 @@
         { elem: 'css', url: '_mishanga.css' },
         { elem: 'css', url: '_mishanga.ie.css', ie: 'lte IE 7' },
         { block: 'i-jquery', elem: 'core' },
-        { elem: 'js', url: '_mishanga.js' }
+        { elem: 'js', url: 'mishanga.ru.js' }
     ],
     i18n: { langs: ['ru', 'en'], lang: 'ru' },
     content: {
