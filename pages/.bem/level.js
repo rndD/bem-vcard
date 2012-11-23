@@ -9,12 +9,11 @@ exports.getTechs = function() {
         'bemjson.js': '',
         'bemdecl.js': 'bemdecl.js',
         'deps.js': 'deps.js',
-        'js': 'js-i',
-        //'css': PATH.join(CUSTOM_TECHS, 'css.js'),
-        //'ie.css': PATH.join(CUSTOM_TECHS, 'ie.css.js'),
+        'bemhtml': PATH.join(BEMBL_TECHS, 'bemhtml.js'),
+        'i18n': PATH.join(BEMBL_TECHS, 'i18n.js'),
+        'i18n.js': PATH.join(BEMBL_TECHS, 'i18n.js.js'),
         'css': 'css',
         'ie.css': 'ie.css',
-        'bemhtml': PATH.join(BEMBL_TECHS, 'bemhtml.js'),
         'html': PATH.join(BEMBL_TECHS, 'html.js')
     }
 }
