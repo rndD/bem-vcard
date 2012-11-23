@@ -24,7 +24,7 @@ Navigate to `http://localhost:8080/pages/mishanga/mishanga.html`
 this by adding this line to your user's
 `.profile` config:
 
-    exports PATH=./node_modules/.bin:$PATH
+    export PATH=./node_modules/.bin:$PATH
 
 ---
 
