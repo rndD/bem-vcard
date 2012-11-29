@@ -1,3 +1,4 @@
+process.env.YENV = 'production';
 MAKE.decl('Arch', {
 
 
@@ -30,6 +31,14 @@ MAKE.decl('BundleNode', {
             'i18n.js',
             'html'
         ];
+    },
+    // for i18n.js.js technology optimization(to get files with underscore)
+    'create-i18n.js-optimizer-node': function(tech, sourceNode, bundleNode) {
+
+        sourceNode.getFiles().forEach(function(f) {
+            this['create-js-optimizer-node'](tech, this.ctx.arch.getNode(f), bundleNode);
+        }, this);
+
     }
 
 });
