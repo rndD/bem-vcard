@@ -1,8 +1,7 @@
 @font-face {
     font-family: 'TextbookNew';
-    src: url('TextbookNew');
-    src: url('i-font_face_textbook-new.woff'),
-         url('i-font_face_textbook-new.ttf');
+    src: local('TextbookNew'),
+    src: url('i-font_face_textbook-new.eot');
 }
 
 .i-font_face_textbook-new {
