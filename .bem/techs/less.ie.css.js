@@ -1,6 +1,6 @@
 var BEM = require('bem');
 
-exports.baseTechPath = require.resolve('./less.css');
+exports.baseTechName = 'css';
 
 exports.techMixin = {
 
