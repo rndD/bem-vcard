@@ -39,6 +39,19 @@ MAKE.decl('BundleNode', {
             this['create-js-optimizer-node'](tech, this.ctx.arch.getNode(f), bundleNode);
         }, this);
 
-    }
+    },
+    'create-less.css-optimizer-node': function(tech, sourceNode, bundleNode) {
 
+        sourceNode.getFiles().forEach(function(f) {
+            this['create-css-optimizer-node'](tech, this.ctx.arch.getNode(f), bundleNode);
+        }, this);
+
+    },
+    'create-less.ie.css-optimizer-node': function(tech, sourceNode, bundleNode) {
+
+        sourceNode.getFiles().forEach(function(f) {
+            this['create-css-optimizer-node'](tech, this.ctx.arch.getNode(f), bundleNode);
+        }, this);
+
+    }
 });

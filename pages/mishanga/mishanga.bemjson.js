@@ -3,8 +3,8 @@
     title: 'Михаил Трошев — mishanga@yandex-team.ru',
     favicon: 'favicon.ico',
     head: [
-        { elem: 'css', url: 'mishanga.css' },
-        { elem: 'css', url: 'mishanga.ie.css', ie: 'lte IE 7' },
+        { elem: 'css', url: '_mishanga.css' },
+        { elem: 'css', url: '_mishanga.ie.css', ie: 'lte IE 7' },
         { block: 'i-jquery', elem: 'core' },
         { elem: 'js', url: '_mishanga.ru.js' }
     ],
