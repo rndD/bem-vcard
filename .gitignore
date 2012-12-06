@@ -1,5 +1,6 @@
 bem-bl
 .bem/cache
+.bem/snapshots
 node_modules
 pages/*/*.css*
 pages/*/*.i18n
