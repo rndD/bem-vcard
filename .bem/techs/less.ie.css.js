@@ -4,7 +4,7 @@ exports.baseTechName = 'css';
 
 exports.techMixin = {
 
-    getSuffixes : function() {
+    getBuildSuffixes : function() {
         return ['ie.css'];
     }
 

@@ -10,8 +10,6 @@ exports.getTechs = function() {
         'bemdecl.js': 'bemdecl.js',
         'deps.js': 'deps.js',
         'bemhtml': PATH.join(BEMBL_TECHS, 'bemhtml.js'),
-        'css': 'css',
-        'ie.css': 'ie.css',
         'i18n': PATH.join(BEMBL_TECHS, 'i18n.js'),
         'i18n.js': PATH.join(BEMBL_TECHS, 'i18n.js.js'),
         'less.css': PATH.join(CUSTOM_TECHS, 'less.css.js'),
