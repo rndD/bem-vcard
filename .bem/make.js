@@ -1,4 +1,4 @@
-process.env.YENV = 'production';
+//process.env.YENV = 'production';
 MAKE.decl('Arch', {
 
 
@@ -24,29 +24,32 @@ MAKE.decl('BundleNode', {
             'bemjson.js',
             'bemdecl.js',
             'deps.js',
-            'bemhtml',
             'less.css',
             'less.ie.css',
+            'bemhtml',
             'i18n',
             'i18n.js',
             'html'
         ];
     },
-    // for i18n.js.js technology optimization(to get files with underscore)
-    'create-i18n.js-optimizer-node': function(tech, sourceNode, bundleNode) {
 
+    'create-i18n.js-optimizer-node': function(tech, sourceNode, bundleNode) {
         sourceNode.getFiles().forEach(function(f) {
             this['create-js-optimizer-node'](tech, this.ctx.arch.getNode(f), bundleNode);
         }, this);
 
     },
-    'create-less.css-optimizer-node': function(tech, sourceNode, bundleNode) {
 
+    'create-less.css-optimizer-node': function(tech, sourceNode, bundleNode) {
         sourceNode.getFiles().forEach(function(f) {
             this['create-css-optimizer-node'](tech, this.ctx.arch.getNode(f), bundleNode);
         }, this);
-
     },
+
+    'create-html-optimizer-node': function(tech, sourceNode, bundleNode) {
+        return this.createBorschikOptimizerNode('.borschik/techs/html', sourceNode, bundleNode);
+    },
+
     'create-less.ie.css-optimizer-node': function(tech, sourceNode, bundleNode) {
 
         sourceNode.getFiles().forEach(function(f) {

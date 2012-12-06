@@ -83,6 +83,12 @@ block b-page {
         }
     }
 
+    elem style{
+        bem: false,
+        tag: 'style',
+        content: '/*borschik:' + 'include:' + this.ctx.url + '*/'
+    }
+
     elem js {
         bem: false,
         tag: 'script',
